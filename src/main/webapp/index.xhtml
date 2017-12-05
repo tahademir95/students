@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h = "http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+    <ui:composition template = "templates/common.xhtml">
+        <ui:define name = "header">
+            <h2 style="display: inline-block;">Student Home Page</h2>
+            <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 83%;"/>
+        </ui:define>
+
+        <ui:define name = "content">
+            <h2 style="text-align: center;">Data Table</h2>
+            <p:dataTable var="st" value="#{test.liste}">
+
+                <p:column headerText="AD" sortable="true">
+                    <h:outputText value="#{st.ad}"/>
+                </p:column>
+
+                <p:column headerText="SOYAD">
+                    <h:outputText value="#{st.soyad}"/>
+                </p:column>
+
+            </p:dataTable>
+
+        </ui:define>
+
+        <ui:define name = "footer">
+            <h2 style="text-align: center;">Home Page Footer</h2>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h = "http://java.sun.com/jsf/html">
+
+<h:body>
+    <ui:composition template = "templates/common.xhtml">
+        <ui:define name = "header">
+            <h2 style="display: inline-block;">Student Login</h2>
+            <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 86%;"/>
+        </ui:define>
+
+        <ui:define name = "content">
+            <br/>
+            <br/>
+            <div style="border: 4px solid red; position: relative; left: 42%; display: inline-block; padding: 20px;">
+            <h2 style="text-align: center;">Login Form</h2>
+            <h:form id="form">
+                <table>
+                    <tr>
+                        <td><h:outputLabel for="username">Username</h:outputLabel></td>
+                        <td><h:inputText id="name-id" value="#{studentInfo.ad}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="password">Password</h:outputLabel></td>
+                        <td><h:inputSecret id="password-id" value="#{studentInfo.password}"/></td>
+                    </tr>
+                </table>
+                <h:commandButton value="Submit" action="index.xhtml" style="position: relative; left: 43%; top: 5px;"></h:commandButton>
+            </h:form>
+            </div>
+            <br/>
+            <br/>
+
+        </ui:define>
+
+        <ui:define name = "footer">
+            <h2 style="text-align: center;">Login Page Footer</h2>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>
+
