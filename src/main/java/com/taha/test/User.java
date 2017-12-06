@@ -10,6 +10,16 @@ public class User{
     String password;
     String gender;
     String address;
+    Integer gpa;
+
+    public Integer getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(Integer gpa) {
+        this.gpa = gpa;
+    }
+
     public String getName() {
         return name;
     }

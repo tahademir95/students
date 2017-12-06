@@ -15,24 +15,24 @@
     <ui:define name = "content">
     <br/>
     <br/>
-    <h2><h:outputText value="Hello #{user.name}"/></h2>
+    <h2><h:outputText value="Hello #{studentInfo.ad}"/></h2>
     <h4><h:outputText value="You have Registered with us Successfully, Your Details are The Following."/></h4>
     <table>
         <tr>
-            <td><b>Email: </b></td>
-            <td><h:outputText value="#{user.email}"/><br/></td>
+            <td><b>Surname: </b></td>
+            <td><h:outputText value="#{studentInfo.soyad}"/><br/></td>
         </tr>
         <tr>
             <td><b>Password:</b></td>
-            <td><h:outputText value="#{user.password}"/><br/></td>
+            <td><h:outputText value="#{studentInfo.password}"/><br/></td>
+        </tr>
+        <tr>
+            <td><b>GPA: </b></td>
+            <td><h:outputText value="#{studentInfo.gpa}"/></td>
         </tr>
         <tr>
             <td><b>Gender:</b></td>
-            <td><h:outputText value="#{user.gender}"/><br/></td>
-        </tr>
-        <tr>
-            <td><b>Address: </b></td>
-            <td><h:outputText value="#{user.address}"/></td>
+            <td><h:outputText value="#{studentInfo.gender}"/><br/></td>
         </tr>
     </table>
     </ui:define>

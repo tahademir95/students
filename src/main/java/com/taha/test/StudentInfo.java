@@ -12,6 +12,15 @@ public class StudentInfo {
     public String password;
     public String gender;
     public String username;
+    public Integer gpa;
+
+    public Integer getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(Integer gpa) {
+        this.gpa = gpa;
+    }
 
     public String getGender() {
         return gender;
