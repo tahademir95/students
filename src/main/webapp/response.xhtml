@@ -7,37 +7,44 @@
       xmlns:h = "http://java.sun.com/jsf/html">
 
 <ui:composition template = "templates/common.xhtml">
-    <ui:define name = "header">
-        <h2 style="display: inline-block;">Student Registration Form</h2>
-        <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 79%;"/>
+
+    <ui:define name="header">
+        <div class="myh">
+            <h2 style="display: inline-block;">Response Of The Registration Form</h2>
+            <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 83%;"/>
+        </div>
     </ui:define>
 
     <ui:define name = "content">
     <br/>
     <br/>
-    <h2><h:outputText value="Hello #{studentInfo.ad}"/></h2>
+    <h2><h:outputText value="Hello #{studentInfo.studentName()}"/></h2>
     <h4><h:outputText value="You have Registered with us Successfully, Your Details are The Following."/></h4>
     <table>
         <tr>
             <td><b>Surname: </b></td>
-            <td><h:outputText value="#{studentInfo.soyad}"/><br/></td>
+            <td><h:outputText value="#{studentInfo.studentSurname()}"/><br/></td>
         </tr>
         <tr>
             <td><b>Password:</b></td>
-            <td><h:outputText value="#{studentInfo.password}"/><br/></td>
+            <td><h:outputText value="#{studentInfo.studentPassword()}"/><br/></td>
         </tr>
         <tr>
             <td><b>GPA: </b></td>
-            <td><h:outputText value="#{studentInfo.gpa}"/></td>
+            <td><h:outputText value="#{studentInfo.studentGPA()}"/></td>
         </tr>
         <tr>
             <td><b>Gender:</b></td>
-            <td><h:outputText value="#{studentInfo.gender}"/><br/></td>
+            <td><h:outputText value="#{studentInfo.studentGender()}"/><br/></td>
         </tr>
     </table>
     </ui:define>
-    <ui:define name = "footer">
-        <h2 style="text-align: center;">Register Page Footer</h2>
+
+
+    <ui:define name="footer">
+        <div class="myh">
+            <h2 style="text-align: center;" class="student-head">Response OF The Registration Form Footer</h2>
+        </div>
     </ui:define>
 </ui:composition>
 </html>

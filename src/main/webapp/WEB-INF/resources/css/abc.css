@@ -1,0 +1,10 @@
+.myh{
+    color: white;
+    background-color: red;
+    height: 70px;
+}
+.student-head{
+    margin: 0;
+    position: relative;
+    top: 20px;
+}

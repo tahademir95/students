@@ -8,9 +8,11 @@
 
 <h:body>
     <ui:composition template = "templates/common.xhtml">
-        <ui:define name = "header">
-            <h2 style="display: inline-block;">Student Registration Form</h2>
-            <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 79%;"/>
+        <ui:define name="header">
+            <div class="myh">
+                <h2 style="display: inline-block;">Student Registration Form</h2>
+                <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 83%;"/>
+            </div>
         </ui:define>
 
         <ui:define name = "content">
@@ -34,7 +36,7 @@
                         </tr>
                         <tr>
                             <td><h:outputLabel for="gpa">GPA</h:outputLabel></td>
-                            <td><h:inputSecret id="gpa-id" value="#{studentInfo.gpa}"/></td>
+                            <td><h:inputText id="gpa-id" value="#{studentInfo.gpa}"/></td>
                         </tr>
 
                         <tr>
@@ -45,16 +47,19 @@
                             </h:selectOneRadio></td>
                         </tr>
                     </table>
-                    <h:commandButton value="Submit" action="response.xhtml" style="position: relative; left: 40%;"></h:commandButton>
+                    <h:commandButton value="Submit" action="#{studentInfo.addNewStudent}" style="position: relative; left: 40%;"/>
                 </h:form>
             </div>
             <br/>
             <br/>
         </ui:define>
 
-        <ui:define name = "footer">
-            <h2 style="text-align: center;">Register Page Footer</h2>
+        <ui:define name="footer">
+            <div class="myh">
+                <h2 style="text-align: center;" class="student-head">Register Page Footer</h2>
+            </div>
         </ui:define>
+
     </ui:composition>
 
 </h:body>

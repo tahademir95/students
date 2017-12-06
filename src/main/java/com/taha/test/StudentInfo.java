@@ -1,18 +1,25 @@
 package com.taha.test;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ComponentSystemEvent;
+import java.io.Serializable;
 
 @ManagedBean
 @RequestScoped
-public class StudentInfo {
+public class StudentInfo implements Serializable{
 
     public String ad;
     public String soyad;
     public String password;
     public String gender;
-    public String username;
+
     public Integer gpa;
+    public static final long serialVersionSID = 1l;
 
     public Integer getGpa() {
         return gpa;
@@ -54,11 +61,38 @@ public class StudentInfo {
         this.password = password;
     }
 
-    public void setUsername(String ad, String soyad) {
-        this.username = ad + '.' + soyad;
+
+    public String addNewStudent(){
+
+        boolean added = true;
+        FacesMessage doneMessage = null;
+        String outcome = null;
+        if (added) {
+            doneMessage = new FacesMessage("Successfully added new student");
+            outcome = "response";
+        } else {
+            doneMessage = new FacesMessage("Failed to add new student");
+            outcome = "register";
+        }
+        FacesContext.getCurrentInstance().addMessage(null, doneMessage);
+        return outcome;
+    }
+    public String studentName(){
+        return ad;
+    }
+    public String studentSurname(){
+        return soyad;
+    }
+    public String studentPassword(){
+        return password;
+    }
+    public String studentGender(){
+        return gender;
+    }
+    public Integer studentGPA(){
+        return gpa;
     }
 
-    public String getUsername() {
-        return username;
-    }
+
+
 }

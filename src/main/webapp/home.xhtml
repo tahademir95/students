@@ -6,23 +6,29 @@
       xmlns:h = "http://java.sun.com/jsf/html"
       xmlns:ui = "http://java.sun.com/jsf/facelets">
 
+
 <h:body>
+    <h:outputStylesheet library="css" name="abc.css"/>
     <ui:composition template = "templates/common.xhtml">
 
         <ui:define name="header">
-            <h2 style="text-align: center;">Student Information</h2><!-- header.xhtml dosyasını override eder -->
+            <div class="myh">
+                <h2 style="text-align: center;" class="student-head">Student Information</h2><!-- header.xhtml dosyasını override eder -->
+            </div>
         </ui:define>
 
         <ui:define name = "content">
             <br/><br/>
-            <h:link value = "Register" outcome = "register" />
-            <br/><br/>
+            <h:link value = "Register" outcome = "register" style="padding-right: 10px;"/>
+
             <h:link value = "Login" outcome = "login" />
             <br/><br/>
         </ui:define>
 
         <ui:define name="footer">
-            <h2 style="text-align: center;">Student Information Footer</h2><!-- footer.xhtml dosyasını override eder -->
+            <div class="myh">
+                <h2 style="text-align: center;" class="student-head">Student Information Footer</h2>
+            </div>
         </ui:define>
     </ui:composition>
 

@@ -8,9 +8,11 @@
 
 <h:body>
     <ui:composition template = "templates/common.xhtml">
-        <ui:define name = "header">
-            <h2 style="display: inline-block;">Student Login</h2>
-            <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 86%;"/>
+        <ui:define name="header">
+            <div class="myh">
+                <h2 style="display: inline-block;">Student Login</h2>
+                <h:link value = "Back To Home" outcome = "home" style="position: relative; left: 86%;"/>
+            </div>
         </ui:define>
 
         <ui:define name = "content">
@@ -37,8 +39,11 @@
 
         </ui:define>
 
-        <ui:define name = "footer">
-            <h2 style="text-align: center;">Login Page Footer</h2>
+        <ui:define name="footer">
+            <div class="myh">
+                <h2 style="text-align: center;"></h2>
+                <h2 style="text-align: center;" class="student-head">Login Page Footer</h2>
+            </div>
         </ui:define>
     </ui:composition>
 

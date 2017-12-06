@@ -5,23 +5,26 @@
 <html xmlns = "http://www.w3.org/1999/xhtml"
       xmlns:h = "http://java.sun.com/jsf/html"
       xmlns:ui = "http://java.sun.com/jsf/facelets">
+<h:head>
+    <h:outputStylesheet library="css" name="abc.css"/>
+</h:head>
 
 <h:body>
-    <div style = "border-width:2px; border-color:black; border-style:solid;">
+    <div>
         <ui:insert name = "header" >
             <ui:include src = "/templates/header.xhtml" />
         </ui:insert>
     </div>
     <br/>
 
-    <div style = "border-width:2px; border-color:black; border-style:solid;">
+    <div>
         <ui:insert name = "content" >
             <ui:include src = "/templates/contents.xhtml" />
         </ui:insert>
     </div>
     <br/>
 
-    <div style = "border-width:2px; border-color:black; border-style:solid;">
+    <div>
         <ui:insert name = "footer" >
             <ui:include src = "/templates/footer.xhtml" />
         </ui:insert>
