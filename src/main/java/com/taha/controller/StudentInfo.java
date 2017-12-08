@@ -1,12 +1,9 @@
-package com.taha.test;
+package com.taha.controller;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ComponentSystemEvent;
 import java.io.Serializable;
 
 @ManagedBean
@@ -19,7 +16,6 @@ public class StudentInfo implements Serializable{
     public String gender;
 
     public Integer gpa;
-    public static final long serialVersionSID = 1l;
 
     public Integer getGpa() {
         return gpa;

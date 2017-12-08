@@ -18,18 +18,65 @@
         </ui:define>
 
         <ui:define name = "content">
-            <h2 style="text-align: center;">Data Table</h2>
-            <p:dataTable var="st" value="#{test.liste}">
 
-                <p:column headerText="AD" sortable="true">
-                    <h:outputText value="#{st.ad}"/>
+            <div style="margin-bottom: 50px; margin-top: 50px;">
+                <!--Database den veri geliyor-->
+                <p:dataTable var="st" value="#{userData.getStudents()}">
+                    <f:facet name="header">Get The Data From Postgresql Database</f:facet>
+
+                    <p:column>
+                        <f:facet name="header">Name Of The Student</f:facet>
+                        #{st.ad}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">Surname Of The Student</f:facet>
+                        #{st.soyad}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">Gender</f:facet>
+                        #{st.gender}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">GPA</f:facet>
+                        #{st.gpa}
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">Password</f:facet>
+                        #{st.password}
+                    </p:column>
+
+                </p:dataTable>
+                <h2 style="text-align: center; margin-bottom: 40px;" class="student-head">There are #{userData.students.size()} students in the database.</h2>
+                <hr/>
+                <hr/>
+            </div>
+
+            <!--Post Constructor İle veri gönderiliyor-->
+            <p:dataTable var="student" value="#{studentPostData.studentList}">
+                <f:facet name="header">Post Constructor To Post Data</f:facet>
+                <p:ajax event="sort" skipChildren="false"/>
+                <p:column headerText="First Name">
+                    <h:outputText value="#{student.ad}"/>
                 </p:column>
-
-                <p:column headerText="SOYAD">
-                    <h:outputText value="#{st.soyad}"/>
+                <p:column headerText="Last Name">
+                    <h:outputText value="#{student.soyad}"/>
                 </p:column>
-
+                <p:column headerText="Gender">
+                    <h:outputText value="#{student.gender}"/>
+                </p:column>
+                <p:column headerText="GPA" sortBy="#{student.gpa}">
+                    <h:outputText value="#{student.gpa}"/>
+                </p:column>
+                <p:column headerText="Password">
+                    <h:outputText value="#{student.password}"/>
+                </p:column>
             </p:dataTable>
+            <h2 style="text-align: center; margin-bottom: 30px;" class="student-head">There are #{studentPostData.studentList.size()} students posted.</h2>
+
         </ui:define>
 
         <ui:define name="footer">
